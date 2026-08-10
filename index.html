@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El arte de congelar fácil — Cocina una vez, come bien toda la semana</title>
+<meta name="description" content="La guía práctica de batch cooking: 28 recetas pensadas para congelar, plan de 30 días y listas de compra. Cocina una vez y resuelve la semana entera.">
+
+<meta property="og:title" content="El arte de congelar fácil">
+<meta property="og:description" content="Cocina una vez. Come bien los siete días.">
+<meta property="og:image" content="portada.png">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   PALETA — derivada de la portada
+   Verde bosque del título, madera cálida del
+   fondo, dorado del sello. La página avanza de
+   frío (congelador) a cálido (mesa servida).
+   ============================================ */
+:root{
+  --forest-deep:#12291F;
+  --forest:#1B3A2C;
+  --forest-soft:#2A4C3B;
+  --sage:#8FA391;
+  --sage-light:#C3D2C2;
+  --gold:#C9A961;
+  --gold-deep:#A8873F;
+  --gold-ink:#6E5318;
+  --cream:#F7F1E7;
+  --wood:#EADCC6;
+  --ink:#2C2418;
+  --ink-soft:#6B5D4B;
+  --line-dark:rgba(195,210,194,.2);
+  --line-light:rgba(44,36,24,.14);
+  --wrap:1080px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--forest-deep);color:var(--cream);
+  line-height:1.65;overflow-x:hidden;
+}
+img{max-width:100%;display:block;height:auto}
+
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 22px}
+.section{padding:76px 0;scroll-margin-top:20px}
+
+/* Gradiente de temperatura */
+.s-1{background:var(--forest-deep)}
+.s-2{background:linear-gradient(180deg,var(--forest-deep),var(--forest))}
+.s-3{background:linear-gradient(180deg,var(--forest),var(--forest-soft))}
+.s-4{background:linear-gradient(180deg,var(--forest-soft) 0%,var(--forest-soft) 62%,#7C8065 82%,var(--wood) 100%)}
+.s-5{background:linear-gradient(180deg,var(--wood),var(--cream))}
+.s-6{background:var(--cream)}
+.s-7{background:linear-gradient(180deg,var(--cream),var(--wood))}
+.s-5,.s-6,.s-7{color:var(--ink)}
+
+/* ---------- TIPOGRAFÍA ---------- */
+.eyebrow{
+  font-size:.7rem;font-weight:600;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:14px;
+}
+.s-5 .eyebrow,.s-6 .eyebrow,.s-7 .eyebrow{color:var(--gold-ink)}
+
+h1,h2{font-family:'Montserrat',sans-serif;font-weight:800;line-height:1.08;letter-spacing:-.01em}
+h1{font-size:clamp(2.2rem,6.6vw,3.7rem);text-transform:uppercase}
+h2{font-size:clamp(1.7rem,4.4vw,2.5rem);margin-bottom:18px}
+h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:7px}
+
+.serif{
+  font-family:'Playfair Display',Georgia,serif;font-weight:400;
+  text-transform:uppercase;letter-spacing:.14em;
+  font-size:.52em;display:block;margin-bottom:.28em;color:var(--sage-light);
+}
+.s-5 .serif,.s-6 .serif,.s-7 .serif{color:var(--ink-soft)}
+.accent{color:var(--gold)}
+.s-5 .accent,.s-6 .accent,.s-7 .accent{color:var(--forest)}
+
+.lead{font-size:clamp(1rem,2.3vw,1.16rem);color:rgba(247,241,231,.86);max-width:56ch}
+.s-5 .lead,.s-6 .lead,.s-7 .lead{color:var(--ink-soft)}
+
+/* ---------- BOTÓN ---------- */
+.cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--gold);color:#231A08;
+  font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:1.04rem;padding:19px 38px;border-radius:8px;border:0;
+  text-decoration:none;cursor:pointer;width:100%;max-width:400px;
+  box-shadow:0 6px 0 var(--gold-deep);
+  transition:transform .14s ease,box-shadow .14s ease;
+}
+.cta:hover{transform:translateY(3px);box-shadow:0 3px 0 var(--gold-deep)}
+.cta:active{transform:translateY(6px);box-shadow:0 0 0 var(--gold-deep)}
+.cta:focus-visible{outline:3px solid var(--sage-light);outline-offset:4px}
+.cta-note{font-size:.82rem;color:var(--sage);margin-top:14px}
+.s-5 .cta-note,.s-6 .cta-note,.s-7 .cta-note{color:var(--ink-soft)}
+
+/* ---------- HERO ---------- */
+.hero{padding:52px 0 68px}
+.hero-grid{display:grid;gap:40px;align-items:center}
+@media(min-width:900px){
+  .hero{padding:66px 0 88px}
+  .hero-grid{grid-template-columns:1.05fr .95fr;gap:56px}
+}
+.book{max-width:310px;margin:0 auto;position:relative;filter:drop-shadow(0 26px 44px rgba(0,0,0,.5))}
+.book img{border-radius:3px 8px 8px 3px}
+.book::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:14px;z-index:2;
+  background:linear-gradient(90deg,rgba(0,0,0,.4),rgba(255,255,255,.08));
+  border-radius:3px 0 0 3px;
+}
+.book-fallback{
+  aspect-ratio:9/12;background:var(--forest);border:1px dashed var(--line-dark);
+  border-radius:6px;display:grid;place-content:center;text-align:center;
+  padding:24px;font-size:.8rem;color:var(--sage);
+}
+
+.price-row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:26px 0 8px}
+.price-old{font-size:1.15rem;color:var(--sage);text-decoration:line-through}
+.price-now{font-family:'Montserrat',sans-serif;font-weight:800;font-size:2.6rem;color:#fff;line-height:1}
+.price-tag{font-size:.8rem;color:var(--sage)}
+
+.badges{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font-size:.8rem;color:var(--sage)}
+.badges span{display:flex;align-items:center;gap:7px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none}
+
+/* ---------- PROBLEMA ---------- */
+.problem-hook{
+  font-family:'Montserrat',sans-serif;font-weight:600;
+  font-size:clamp(1.2rem,3.2vw,1.6rem);line-height:1.45;max-width:24ch;
+}
+.problem-body{max-width:60ch;margin-top:24px;font-size:1.02rem;color:rgba(247,241,231,.8)}
+
+/* ---------- PASOS ---------- */
+.steps{display:grid;gap:26px;margin-top:38px}
+@media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr);gap:32px}}
+.step{border-top:2px solid var(--gold);padding-top:20px}
+.step-n{
+  font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--gold);
+  line-height:1;display:block;margin-bottom:10px;
+}
+.step p{font-size:.95rem;color:rgba(247,241,231,.8)}
+
+/* ---------- INCLUYE ---------- */
+.includes{display:grid;gap:2px;margin-top:34px;background:var(--line-dark)}
+@media(min-width:700px){.includes{grid-template-columns:1fr 1fr}}
+.inc{background:var(--forest-soft);padding:26px 24px}
+.inc--flag{background:#33583F;box-shadow:inset 3px 0 0 var(--gold)}
+.inc-k{
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.85rem;
+  color:var(--gold);line-height:1;display:block;margin-bottom:8px;
+}
+.inc h3{color:#fff;font-size:.98rem;margin-bottom:5px}
+.inc p{font-size:.89rem;color:rgba(247,241,231,.72);line-height:1.55}
+
+/* ---------- CAPÍTULOS (contraste corregido) ---------- */
+.chapters{display:grid;gap:12px;margin-top:34px}
+@media(min-width:700px){.chapters{grid-template-columns:1fr 1fr}}
+.ch{
+  display:flex;gap:15px;align-items:center;
+  padding:16px 18px;border-radius:10px;
+  background:var(--forest-deep);
+  border:1px solid rgba(201,169,97,.35);
+  transition:border-color .2s ease,transform .2s ease;
+}
+.ch:hover{border-color:var(--gold);transform:translateX(3px)}
+.ch-n{
+  font-family:'Playfair Display',serif;color:var(--gold);
+  font-size:1.3rem;line-height:1;flex:none;width:30px;text-align:center;
+}
+.ch strong{
+  display:block;font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:.95rem;color:#FFFFFF;margin-bottom:2px;letter-spacing:.01em;
+}
+.ch span{font-size:.84rem;color:var(--sage-light)}
+
+/* ---------- VISTAZO ---------- */
+.peek{display:grid;gap:22px;margin-top:34px}
+@media(min-width:700px){.peek{grid-template-columns:repeat(3,1fr)}}
+.peek-item{display:flex;flex-direction:column;gap:12px}
+.peek-shot{
+  aspect-ratio:3/4;border-radius:10px;overflow:hidden;background:var(--wood);
+  border:1px solid var(--line-light);display:grid;place-content:center;
+  text-align:center;padding:20px;font-size:.8rem;color:var(--ink-soft);
+  box-shadow:0 10px 26px rgba(44,36,24,.12);
+}
+.peek-shot img{width:100%;height:100%;object-fit:cover}
+.peek-cap{display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--ink-soft)}
+.tag{
+  font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:4px 9px;border-radius:5px;flex:none;
+}
+.tag--screen{background:var(--forest);color:var(--cream)}
+.tag--print{background:var(--gold-ink);color:#fff}
+
+/* ---------- PRECIO ---------- */
+.pricebox{
+  background:#fff;border:1px solid var(--line-light);border-radius:16px;
+  padding:38px 26px;text-align:center;max-width:520px;margin:34px auto 0;
+  box-shadow:0 20px 50px rgba(44,36,24,.1);
+}
+.pricebox .price-now{color:var(--ink);font-size:3.1rem}
+.pricebox .price-old,.pricebox .price-tag{color:var(--ink-soft)}
+.pricebox .price-row{justify-content:center;margin:8px 0 6px}
+.guarantee{margin-top:26px;padding-top:22px;border-top:1px solid var(--line-light);font-size:.88rem;color:var(--ink-soft)}
+.guarantee strong{color:var(--ink)}
+
+/* ---------- PAGOS ---------- */
+.pay{margin-top:24px;padding-top:22px;border-top:1px solid var(--line-light)}
+.pay-title{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px}
+.pay-list{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.pay-list li{
+  list-style:none;font-size:.82rem;font-weight:500;color:var(--ink);
+  background:var(--cream);border:1px solid var(--line-light);
+  padding:7px 14px;border-radius:6px;
+}
+.pay-note{font-size:.78rem;color:var(--ink-soft);margin-top:14px;line-height:1.55;max-width:44ch;margin-inline:auto}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:720px;margin:34px auto 0}
+.faq details{border-bottom:1px solid var(--line-light)}
+.faq summary{
+  cursor:pointer;list-style:none;padding:20px 34px 20px 0;position:relative;
+  font-family:'Montserrat',sans-serif;font-weight:600;font-size:.98rem;color:var(--ink);
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);
+  font-size:1.4rem;font-weight:400;color:var(--gold-ink);
+}
+.faq details[open] summary::after{content:"–"}
+.faq summary:focus-visible{outline:2px solid var(--gold-ink);outline-offset:3px;border-radius:4px}
+.faq p{padding:0 0 22px;color:var(--ink-soft);font-size:.94rem;max-width:62ch}
+
+/* ---------- CIERRE ---------- */
+.close{text-align:center}
+.close h2{max-width:17ch;margin:0 auto 18px}
+
+/* ---------- BARRA MÓVIL ---------- */
+.bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:rgba(18,41,31,.96);backdrop-filter:blur(10px);
+  border-top:1px solid var(--line-dark);
+  padding:11px 16px calc(11px + env(safe-area-inset-bottom));
+  display:flex;align-items:center;gap:14px;
+  transform:translateY(115%);transition:transform .3s ease;
+}
+.bar.on{transform:translateY(0)}
+.bar-p{flex:1;min-width:0}
+.bar-p b{display:block;font-family:'Montserrat',sans-serif;font-weight:800;color:#fff;font-size:1.12rem;line-height:1.15}
+.bar-p em{font-style:normal;font-size:.74rem;color:var(--sage)}
+.bar .cta{width:auto;padding:14px 24px;font-size:.92rem;box-shadow:0 4px 0 var(--gold-deep);flex:none}
+@media(min-width:900px){.bar{display:none}}
+@media(max-width:899px){body.bar-live{padding-bottom:86px}}
+
+footer{background:var(--forest-deep);color:var(--sage);font-size:.8rem;text-align:center;padding:40px 22px}
+
+/* ---------- MOTION ---------- */
+.rise{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.rise.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rise{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ HERO ══════════ -->
+<header class="hero s-1">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Guía práctica de batch cooking</p>
+      <h1><span class="serif">El arte de</span>Congelar fácil</h1>
+      <p class="lead" style="margin-top:22px">
+        Cocina una vez y come bien toda la semana. 28 recetas pensadas para congelar,
+        plan de menús de 30 días y las listas de compra ya hechas.
+        En dos versiones: una para leer en pantalla y otra para imprimir la receta del día.
+      </p>
+
+      <div class="price-row">
+        <span class="price-old">$29</span>
+        <span class="price-now">$9.97</span>
+        <span class="price-tag">USD · pago único</span>
+      </div>
+
+      <a class="cta" href="https://pay.hotmart.com/S107085726W">Quiero mis recetas →</a>
+      <p class="cta-note">Acceso inmediato · Garantía de 7 días</p>
+
+      <div class="badges">
+        <span><i class="dot"></i>Descarga al instante</span>
+        <span><i class="dot"></i>2 versiones incluidas</span>
+        <span><i class="dot"></i>Acceso de por vida</span>
+      </div>
+    </div>
+
+    <div class="book">
+      <!-- Coloca portada.png junto a este archivo -->
+      <img src="portada.png" width="896" height="1200" fetchpriority="high"
+           alt="Portada del libro El arte de congelar fácil"
+           onerror="this.outerHTML='&lt;div class=\'book-fallback\'&gt;Coloca <b>portada.png</b> en la misma carpeta que este archivo&lt;/div&gt;'">
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ PROBLEMA ══════════ -->
+<section class="section s-2">
+  <div class="wrap rise">
+    <p class="eyebrow">Por qué pasa</p>
+    <p class="problem-hook">Nadie come mal porque quiere. Come mal porque no le alcanza el tiempo.</p>
+    <p class="problem-body">
+      Trabajo, hijos, mil pendientes. Cuando llega la noche ya no queda energía para nada.
+      Ahí gana el delivery, gana lo ultraprocesado, y después llega la culpa.
+      El problema no es tu fuerza de voluntad: es que decidir qué comer a las nueve de la noche,
+      con hambre y cansancio, es una batalla perdida de antemano.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════ SOLUCIÓN ══════════ -->
+<section class="section s-3">
+  <div class="wrap rise">
+    <p class="eyebrow">Cómo funciona</p>
+    <h2>Tres pasos. Una tarde.<br><span class="accent">La semana resuelta.</span></h2>
+
+    <div class="steps">
+      <div class="step">
+        <span class="step-n">01</span>
+        <h3>Cocinas una vez</h3>
+        <p>Una sesión de 2 a 3 horas el fin de semana. El libro te dice exactamente qué preparar y en qué orden para aprovechar cada minuto.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">02</span>
+        <h3>Congelas bien</h3>
+        <p>Cada receta indica cómo porcionar, qué envase usar y cuánto dura. Esa técnica es la diferencia entre comida que sabe recién hecha y comida seca.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">03</span>
+        <h3>Ensamblas cada día</h3>
+        <p>De lunes a sábado no cocinas: sacas, calientas y combinas. Diez minutos y tienes un plato completo distinto cada día.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ QUÉ INCLUYE ══════════ -->
+<section class="section s-4">
+  <div class="wrap rise">
+    <p class="eyebrow">Qué recibes</p>
+    <h2>Todo lo que lleva dentro</h2>
+    <p class="lead">No es una lista de recetas suelta. Es un sistema completo: qué cocinar, en qué orden, cuánto comprar y cómo guardarlo.</p>
+
+    <div class="includes">
+      <div class="inc">
+        <span class="inc-k">28</span>
+        <h3>Recetas para congelar</h3>
+        <p>Organizadas en 7 capítulos por tipo de alimento, todas pensadas para mantener textura y sabor tras la congelación.</p>
+      </div>
+      <div class="inc">
+        <span class="inc-k">30</span>
+        <h3>Días de menú planificado</h3>
+        <p>Calendario completo con desayuno, comida y cena, más la sesión de cocina de cada semana paso a paso.</p>
+      </div>
+      <div class="inc">
+        <span class="inc-k">4</span>
+        <h3>Semanas temáticas</h3>
+        <p>Mediterránea, alta en proteínas, vegetariana y económica. Eliges según lo que necesites esa semana.</p>
+      </div>
+      <div class="inc">
+        <span class="inc-k">✓</span>
+        <h3>Listas de compra</h3>
+        <p>Ya calculadas por semana y con cantidades exactas. Imprimes y compras sin pensar ni improvisar.</p>
+      </div>
+      <div class="inc">
+        <span class="inc-k">✓</span>
+        <h3>Calorías y macros</h3>
+        <p>Cada receta incluye calorías, proteínas, carbohidratos, grasas, porciones y duración en congelador.</p>
+      </div>
+      <div class="inc">
+        <span class="inc-k">✓</span>
+        <h3>Alérgenos señalizados</h3>
+        <p>Las opciones sin gluten, sin lactosa y veganas están marcadas de forma visible en cada receta.</p>
+      </div>
+      <div class="inc inc--flag">
+        <span class="inc-k">2</span>
+        <h3>Versiones del libro</h3>
+        <p>Una pensada para leer en el celular o la tablet, y otra lista para imprimir solo la receta que vas a cocinar ese día.</p>
+      </div>
+      <div class="inc inc--flag">
+        <span class="inc-k">✓</span>
+        <h3>Glosario de ingredientes</h3>
+        <p>Cómo se llama cada alimento en México, España, Argentina, Colombia y el resto de la región. Para que nada te frene en el supermercado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CAPÍTULOS ══════════ -->
+<section class="section s-5">
+  <div class="wrap rise">
+    <p class="eyebrow">El contenido</p>
+    <h2>Siete capítulos<br><span class="accent">que se combinan entre sí</span></h2>
+    <p class="lead">Esa es la clave del método: no cocinas platos cerrados, cocinas piezas que se ensamblan de formas distintas.</p>
+
+    <div class="chapters">
+      <div class="ch"><span class="ch-n">I</span><div><strong>Carnes y Pollo</strong><span>Alto contenido proteico</span></div></div>
+      <div class="ch"><span class="ch-n">II</span><div><strong>Pescados y Mariscos</strong><span>Ligeros y ricos en omega-3</span></div></div>
+      <div class="ch"><span class="ch-n">III</span><div><strong>Acompañamientos</strong><span>Guarniciones que aguantan el frío</span></div></div>
+      <div class="ch"><span class="ch-n">IV</span><div><strong>Meriendas y Snacks</strong><span>Porciones listas para llevar</span></div></div>
+      <div class="ch"><span class="ch-n">V</span><div><strong>Aderezos y Salsas</strong><span>Bases que cambian todo el plato</span></div></div>
+      <div class="ch"><span class="ch-n">VI</span><div><strong>Sopas y Caldos</strong><span>Se conservan hasta 6 meses</span></div></div>
+      <div class="ch"><span class="ch-n">VII</span><div><strong>Postres</strong><span>Perfil nutricional más ligero</span></div></div>
+      <div class="ch"><span class="ch-n">+</span><div><strong>3 Anexos prácticos</strong><span>Plan, menús y organización del congelador</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ VISTAZO ══════════ -->
+<section class="section s-6">
+  <div class="wrap rise">
+    <p class="eyebrow">Un vistazo dentro</p>
+    <h2>Así se ve por dentro</h2>
+    <p class="lead">Cada receta con sus ingredientes, pasos numerados, tabla nutricional, alérgenos y cuánto dura en el congelador.</p>
+
+    <div class="peek">
+      <div class="peek-item">
+        <div class="peek-shot">
+          <img src="captura-1.jpg" alt="Página interior del libro, versión para leer en pantalla" loading="lazy">
+        </div>
+        <p class="peek-cap"><span class="tag tag--screen">Ebook</span> Versión para leer en pantalla</p>
+      </div>
+      <div class="peek-item">
+        <div class="peek-shot">
+          <img src="captura-2.jpg" alt="Página interior del libro, versión para leer en pantalla" loading="lazy">
+        </div>
+        <p class="peek-cap"><span class="tag tag--screen">Ebook</span> Versión para leer en pantalla</p>
+      </div>
+      <div class="peek-item">
+        <div class="peek-shot">
+          <img src="captura-3.jpg" alt="Receta en la versión lista para imprimir" loading="lazy">
+        </div>
+        <p class="peek-cap"><span class="tag tag--print">Imprimible</span> Versión lista para imprimir</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+  ══════════ TESTIMONIOS ══════════
+  Añade aquí una sección de testimonios SOLO cuando tengas
+  reseñas reales de compradores. Los testimonios inventados
+  generan reembolsos y sanciones en Hotmart.
+-->
+
+<!-- ══════════ PRECIO ══════════ -->
+<section class="section s-6" id="comprar">
+  <div class="wrap rise" style="text-align:center">
+    <p class="eyebrow">Tu copia</p>
+    <h2>Menos que un delivery.<br><span class="accent">Te resuelve el mes entero.</span></h2>
+
+    <div class="pricebox">
+      <div class="price-row">
+        <span class="price-old">$29</span>
+        <span class="price-now">$9.97</span>
+      </div>
+      <p class="price-tag" style="margin-bottom:24px">USD · pago único · las 2 versiones incluidas</p>
+
+      <a class="cta" href="https://pay.hotmart.com/S107085726W">Quiero mis recetas →</a>
+      <p class="cta-note">Descarga inmediata tras el pago</p>
+
+      <div class="pay">
+        <p class="pay-title">Formas de pago</p>
+        <ul class="pay-list">
+          <li>Tarjeta de crédito</li>
+          <li>Tarjeta de débito</li>
+          <li>Mercado Pago</li>
+          <li>OXXO</li>
+          <li>PayPal</li>
+        </ul>
+        <p class="pay-note">
+          Mercado Pago y OXXO están disponibles en México y otros países de la región.
+          Al abrir el pago verás automáticamente los métodos habilitados donde estés,
+          con el precio convertido a tu moneda.
+        </p>
+      </div>
+
+      <div class="guarantee">
+        <strong>Garantía de 7 días.</strong> Si el método no te funciona, solicitas el reembolso
+        dentro del plazo y recibes el 100 % de lo pagado.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FAQ ══════════ -->
+<section class="section s-7">
+  <div class="wrap rise">
+    <p class="eyebrow">Dudas frecuentes</p>
+    <h2 style="text-align:center">Preguntas antes de comprar</h2>
+
+    <div class="faq">
+      <details>
+        <summary>¿Es un libro físico o digital?</summary>
+        <p>Es digital, en PDF. Lo recibes por correo electrónico justo después del pago y lo puedes leer en el móvil, la tablet, la computadora o imprimirlo si prefieres tenerlo en papel en la cocina.</p>
+      </details>
+      <details>
+        <summary>¿Cómo puedo pagar?</summary>
+        <p>Con tarjeta de crédito o débito, Mercado Pago, OXXO o PayPal. Los métodos locales como Mercado Pago y OXXO aplican en México y varios países de la región; el checkout detecta dónde estás y te muestra las opciones disponibles con el precio ya convertido a tu moneda.</p>
+      </details>
+      <details>
+        <summary>¿Sirve si no sé cocinar?</summary>
+        <p>Sí. Las recetas están escritas paso a paso, sin técnicas complicadas ni utensilios especiales. Si sabes usar una sartén y un horno, puedes hacer todas.</p>
+      </details>
+      <details>
+        <summary>¿En qué formato llega el libro?</summary>
+        <p>Recibes dos versiones en PDF. Una está pensada para leer en pantalla, con páginas que se ven bien en el celular y la tablet. La otra está preparada para imprimir: puedes sacar solo la receta que vas a cocinar ese día y tenerla en la cocina sin manchar el teléfono.</p>
+      </details>
+      <details>
+        <summary>Los ingredientes se llaman distinto en mi país, ¿es un problema?</summary>
+        <p>No. El libro incluye un glosario con las equivalencias de cada alimento entre México, España, Argentina, Colombia y el resto de la región, para que sepas exactamente qué pedir aunque el nombre cambie donde vives.</p>
+      </details>
+      <details>
+        <summary>¿Los ingredientes se consiguen en mi país?</summary>
+        <p>Las recetas usan ingredientes básicos de supermercado: pollo, carne molida, pescado, legumbres, arroz, verduras de temporada. Nada exótico ni caro. Además, varias admiten sustituciones que vienen indicadas en el propio libro.</p>
+      </details>
+      <details>
+        <summary>¿Necesito un congelador grande?</summary>
+        <p>No. El libro incluye un sistema de organización pensado también para congeladores pequeños, con técnicas para aprovechar el espacio, como congelar en bolsas planas apiladas de canto.</p>
+      </details>
+      <details>
+        <summary>¿Y si no me gusta?</summary>
+        <p>Tienes 7 días de garantía desde la compra. Si en ese plazo decides que no es para ti, solicitas el reembolso desde la plataforma y recibes el 100 % de lo pagado.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CIERRE ══════════ -->
+<section class="section s-7">
+  <div class="wrap close rise">
+    <h2>Cocinas una vez.<br><span class="accent">Comes bien toda la semana.</span></h2>
+    <p class="lead" style="margin:0 auto 28px">Sin estrés. Sin correr contrarreloj. Sin renunciar a tu salud.</p>
+    <a class="cta" href="https://pay.hotmart.com/S107085726W" style="margin:0 auto">Quiero mis recetas →</a>
+    <p class="cta-note">$9.97 USD · pago único · garantía de 7 días</p>
+  </div>
+</section>
+
+<footer>
+  <p>© <span id="y"></span> El arte de congelar fácil · David M. · Todos los derechos reservados</p>
+  <p style="margin-top:10px;max-width:640px;margin-inline:auto;line-height:1.6">
+    Este material tiene fines informativos y no sustituye la orientación de un profesional de la salud o la nutrición.
+  </p>
+</footer>
+
+<!-- ══════════ BARRA MÓVIL ══════════ -->
+<div class="bar" id="bar">
+  <div class="bar-p">
+    <b>$9.97</b>
+    <em>Pago único · garantía 7 días</em>
+  </div>
+  <a class="cta" href="https://pay.hotmart.com/S107085726W">Comprar</a>
+</div>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.rise').forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll('.rise').forEach(el => el.classList.add('in'));
+}
+
+const bar = document.getElementById('bar');
+const hero = document.querySelector('.hero');
+new IntersectionObserver(([e]) => {
+  const show = !e.isIntersecting;
+  bar.classList.toggle('on', show);
+  document.body.classList.toggle('bar-live', show);
+}, { threshold: 0 }).observe(hero);
+</script>
+
+</body>
+</html>
