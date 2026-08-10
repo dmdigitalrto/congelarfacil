@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Arte de Congelar Fácil | El Método Definitivo de Batch Cooking</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            dark: '#0f172a',
+                            emerald: '#059669',
+                            accent: '#10b981'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .pulse-subtle {
+            animation: pulse-slow 2.5s infinite ease-in-out;
+        }
+        @keyframes pulse-slow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .book-3d {
+            box-shadow: -12px 12px 25px -5px rgba(15, 23, 42, 0.25), -2px 2px 6px -1px rgba(0, 0, 0, 0.1);
+            transform: rotateY(-12deg) rotateX(4deg);
+            transition: transform 0.4s ease;
+        }
+        .book-3d:hover {
+            transform: rotateY(-4deg) rotateX(2deg) scale(1.02);
+        }
+
+        /* Toast animation */
+        @keyframes slideInUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-slide-up {
+            animation: slideInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-orange-500 selection:text-white pb-24 md:pb-0">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-orange-600 via-amber-600 to-orange-600 text-white text-xs md:text-sm py-2.5 px-4 text-center font-medium shadow-sm flex items-center justify-center gap-2 flex-wrap">
+        <span class="inline-flex items-center gap-1 bg-amber-400/20 text-amber-200 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider">
+            <i class="fa-solid fa-fire text-amber-300 animate-bounce"></i> Oferta Especial
+        </span>
+        <span>🔥 <strong>65% DE DESCUENTO SOLO HOY</strong> · ÚLTIMAS COPIAS DISPONIBLES</span>
+        <div class="inline-flex items-center gap-1.5 bg-black/25 px-2.5 py-0.5 rounded-full text-xs font-mono font-bold text-amber-300">
+            <i class="fa-regular fa-clock"></i>
+            <span id="countdown-timer">14m 52s</span>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <header class="relative bg-gradient-to-b from-orange-50/90 via-white to-slate-50 border-b border-slate-200/80 overflow-hidden pt-8 pb-12 lg:pt-14 lg:pb-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+
+                <!-- Left Column: Copy -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+
+                    <!-- Pill Badge -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/90 border border-orange-200/80 text-orange-800 text-xs sm:text-sm font-semibold shadow-xs">
+                        <i class="fa-solid fa-shield-cat text-orange-600"></i>
+                        <span>El Sistema Anti-Estrés para la Cocina Moderna</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-[1.15] tracking-tight">
+                        Cocina un solo día a la semana y <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-amber-600 to-orange-500">disfruta de platos como recién hechos</span> todas las noches.
+                    </h1>
+
+                    <!-- Subheadline -->
+                    <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Olvídate de comidas acuosas, carnes secas y el molesto "sabor a congelador". Descubre la guía paso a paso con <strong>28 recetas estratégicas</strong> + <strong>Plan Maestro de 30 Días</strong> para comer delicioso sin esclavizarte en la cocina.
+                    </p>
+
+                    <!-- Feature bullets -->
+                    <ul class="space-y-2.5 text-slate-700 text-sm sm:text-base font-medium max-w-lg mx-auto lg:mx-0 text-left">
+                        <li class="flex items-center gap-3">
+                            <span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
+                            <span><strong>El Secreto del Escudo Térmico:</strong> Conserva sabor, nutrientes y textura impecable.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
+                            <span><strong>Ahorra hasta 12 horas</strong> de cocina y <strong>+$180 USD/mes</strong> en delivery y desperdicio.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
+                            <span><strong>100% Adaptado a tu Salud:</strong> Valores nutricionales, macros y sellos Sin Gluten / Sin Lactosa.</span>
+                        </li>
+                    </ul>
+
+                    <!-- Offer Box & CTA -->
+                    <div class="pt-2">
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-3">
+                            <!-- Price Block -->
+                            <div class="text-center sm:text-left">
+                                <div class="flex items-baseline gap-2 justify-center sm:justify-start">
+                                    <span class="text-3xl sm:text-4xl font-extrabold text-slate-900">$9.97</span>
+                                    <span class="text-lg text-slate-400 line-through font-medium">$29.00</span>
+                                    <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">65% DTO</span>
+                                </div>
+                                <span class="text-xs text-slate-500 font-medium">USD · Un solo pago · Descarga inmediata en PDF</span>
+                            </div>
+
+                            <!-- CTA Button -->
+                            <a href="https://pay.hotmart.com/S107085726W" target="_blank" rel="noopener noreferrer"
+                               class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-lg rounded-xl shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-3 group pulse-subtle">
+                                <span>¡QUIERO MI COPIA AHORA!</span>
+                                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+
+                        <!-- Trust micro-copy -->
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 text-xs text-slate-500 font-medium pt-1">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-bolt text-amber-500"></i> Acceso Digital Inmediato</span>
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-emerald-600"></i> Garantía Blindada de 7 Días</span>
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-lock text-slate-400"></i> Pago 100% Seguro por Hotmart</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Visual Mockup Showcase -->
+                <div class="lg:col-span-5 relative flex justify-center perspective-1000">
+                    <div class="relative w-full max-w-sm sm:max-w-md">
+
+                        <!-- Glow Backdrop -->
+                        <div class="absolute -inset-2 bg-gradient-to-tr from-orange-500/30 to-amber-400/30 rounded-3xl blur-2xl opacity-70"></div>
+
+                        <!-- Ebook Visual Mockup Container -->
+                        <div class="relative bg-gradient-to-b from-slate-900 to-slate-950 p-6 sm:p-8 rounded-2xl shadow-2xl border border-slate-800 text-white book-3d">
+
+                            <!-- Ebook Cover Inner -->
+                            <div class="border border-amber-500/30 rounded-xl p-5 bg-slate-900/90 space-y-4 relative overflow-hidden">
+                                <div class="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-xl pointer-events-none"></div>
+
+                                <div class="flex items-center justify-between text-xs text-amber-400 font-bold uppercase tracking-wider">
+                                    <span>Guía Práctica & Sistema Completo</span>
+                                    <i class="fa-solid fa-kitchen-set text-lg"></i>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <p class="text-xs text-slate-400 uppercase tracking-widest font-semibold">El arte de</p>
+                                    <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+                                        CONGELAR <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">FÁCIL</span>
+                                    </h3>
+                                    <p class="text-xs text-orange-200/90 pt-1">Cocina inteligente para comer saludable sin cocinar todos los días</p>
+                                </div>
+
+                                <!-- Food preview grid inside cover -->
+                                <div class="grid grid-cols-2 gap-2 my-4">
+                                    <div class="h-20 rounded-lg bg-cover bg-center border border-slate-700" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80')"></div>
+                                    <div class="h-20 rounded-lg bg-cover bg-center border border-slate-700" style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&q=80')"></div>
+                                </div>
+
+                                <div class="pt-2 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
+                                    <span>Edición <strong>Digital PDF</strong></span>
+                                    <span class="text-amber-400 font-semibold"><i class="fa-solid fa-check-double"></i> 28 Recetas + 4 Bonos</span>
+                                </div>
+                            </div>
+
+                            <!-- Floating Badge Top Right -->
+                            <div class="absolute -top-3 -right-3 bg-emerald-600 text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-lg flex items-center gap-1.5 border border-emerald-400/40">
+                                <i class="fa-solid fa-circle-check text-emerald-200"></i>
+                                <span>Descarga Instantánea</span>
+                            </div>
+
+                            <!-- Floating Badge Bottom Left -->
+                            <div class="absolute -bottom-4 -left-4 bg-slate-900/95 backdrop-blur-md text-white p-3 rounded-xl shadow-xl flex items-center gap-3 border border-slate-700">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-amber-500 text-white flex items-center justify-center font-bold text-lg shadow-sm">30</div>
+                                <div class="text-left">
+                                    <p class="text-xs font-bold text-white leading-none">Días de Menú</p>
+                                    <p class="text-[10px] text-slate-400 mt-0.5">Bono #1: Calendario completo</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- CALCULATOR SECTION (INTERACTIVE SAVINGS TOOL) -->
+    <section class="py-14 bg-gradient-to-b from-slate-900 to-slate-950 text-white border-y border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+
+            <div class="text-center space-y-3 mb-8">
+                <span class="text-xs font-bold tracking-widest text-amber-400 uppercase bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
+                    <i class="fa-solid fa-calculator mr-1"></i> Calculadora de Ahorro Real
+                </span>
+                <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+                    ¿Cuánto dinero y horas desperdicias por NO planificar tu cocina?
+                </h2>
+                <p class="text-slate-400 text-sm max-w-xl mx-auto">
+                    Ajusta los deslizadores a tu ritmo de vida actual y mira cuánto podrías ahorrar cada mes con este método:
+                </p>
+            </div>
+
+            <!-- Interactive Calculator Box -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Slider 1 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center text-sm font-medium">
+                            <label for="delivery-days" class="text-slate-300">Días que pides delivery / improvisas cenando fuera:</label>
+                            <span class="text-amber-400 font-bold text-base" id="delivery-days-val">3 días/semana</span>
+                        </div>
+                        <input type="range" id="delivery-days" min="1" max="7" value="3"
+                               class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-orange-500"
+                               oninput="updateCalculator()">
+                    </div>
+
+                    <!-- Slider 2 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center text-sm font-medium">
+                            <label for="cost-per-meal" class="text-slate-300">Gasto promedio por persona/comida:</label>
+                            <span class="text-amber-400 font-bold text-base" id="cost-val">$15 USD</span>
+                        </div>
+                        <input type="range" id="cost-per-meal" min="5" max="40" step="1" value="15"
+                               class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-orange-500"
+                               oninput="updateCalculator()">
+                    </div>
+                </div>
+
+                <!-- Results Output -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-800 text-center">
+                    <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700/60">
+                        <p class="text-xs text-slate-400 font-medium">Dinero Recuperado al Mes</p>
+                        <p class="text-2xl sm:text-3xl font-black text-emerald-400 mt-1" id="monthly-savings">$135 USD</p>
+                    </div>
+
+                    <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700/60">
+                        <p class="text-xs text-slate-400 font-medium">Horas Libres Ganadas al Mes</p>
+                        <p class="text-2xl sm:text-3xl font-black text-amber-400 mt-1" id="hours-saved">12 hrs/mes</p>
+                    </div>
+
+                    <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700/60">
+                        <p class="text-xs text-slate-400 font-medium">Retorno sobre la Inversión ($9.97)</p>
+                        <p class="text-2xl sm:text-3xl font-black text-orange-400 mt-1" id="roi-val">1,350%</p>
+                    </div>
+                </div>
+
+                <div class="text-center pt-2">
+                    <a href="https://pay.hotmart.com/S107085726W" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold text-sm rounded-xl transition-all shadow-md gap-2">
+                        <span>Detener el desperdicio y tomar el control hoy mismo</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PAIN POINT & PROBLEM/SOLUTION SECTION -->
+    <section class="py-16 bg-white border-b border-slate-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6">
+
+            <span class="text-xs font-bold tracking-widest text-orange-600 uppercase bg-orange-50 px-3 py-1 rounded-full border border-orange-100">
+                ¿Te Suena Familiar Esta Historia?
+            </span>
+
+            <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-900">
+                La fatiga mental de las 8:00 PM: El verdadero culpable de que comas mal y gastes de más
+            </h2>
+
+            <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+                Llegas exhausto a casa tras un día extenuante. Abres el refrigerador con la esperanza de encontrar algo nutritivo y rápido... pero solo ves verduras marchitas, ingredientes sueltos y la pesada perspectiva de cocinar durante una hora y luego fregar platos.
+                <br><br>
+                ¿El resultado inevitable? <strong>Cedes a la tentación, pides delivery alto en calorías o terminas comiendo ultraprocesados</strong>. Tu salud resiente el impacto, tu dinero se esfuma y la culpa aparece al día siguiente. <u>No te falta fuerza de voluntad; simplemente te falta una estrategia clara</u>.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-left">
+                <!-- Bad way -->
+                <div class="p-6 rounded-2xl bg-red-50/70 border border-red-200/80 space-y-3">
+                    <div class="flex items-center gap-2 font-bold text-red-900 text-base">
+                        <div class="w-7 h-7 rounded-full bg-red-200 text-red-700 flex items-center justify-center text-xs">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                        <span>El Caos de Improvisar Cada Día</span>
+                    </div>
+                    <ul class="text-xs text-red-950/80 space-y-2.5 leading-relaxed">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-minus text-red-400 mt-0.5"></i> <strong>Estrés diario:</strong> La desgastante pregunta en tu mente: "¿Qué diablos voy a preparar hoy?".</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-minus text-red-400 mt-0.5"></i> <strong>Comida con sabor "a congelador":</strong> Congelas platos en recipientes inadecuados que terminan resecos o llenos de escarcha.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-minus text-red-400 mt-0.5"></i> <strong>Dinero a la basura:</strong> Desperdicio masivo de vegetales y sobregastos en propinas y tarifas de apps.</li>
+                    </ul>
+                </div>
+
+                <!-- Good way -->
+                <div class="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200/80 space-y-3">
+                    <div class="flex items-center gap-2 font-bold text-emerald-900 text-base">
+                        <div class="w-7 h-7 rounded-full bg-emerald-200 text-emerald-700 flex items-center justify-center text-xs">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <span>La Tranquilidad con "El Arte de Congelar Fácil"</span>
+                    </div>
+                    <ul class="text-xs text-emerald-950/80 space-y-2.5 leading-relaxed">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-plus text-emerald-600 mt-0.5"></i> <strong>Cena en 5 minutos:</strong> Abres tu congelador organizado, calientas y disfrutas de un plato casero impecable.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-plus text-emerald-600 mt-0.5"></i> <strong>Técnicas de Chef:</strong> Blanqueado y empaque plano para proteger los jugos de las carnes y la textura de las verduras.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-plus text-emerald-600 mt-0.5"></i> <strong>Salud bajo control:</strong> 28 recetas balanceadas con conteo nutricional preciso para mantener tus metas físicas.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- INTERACTIVE RECIPE EXPLORER (CHAPTER PREVIEW) -->
+    <section class="py-16 bg-slate-50 border-b border-slate-200/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+            <div class="text-center space-y-3 mb-10">
+                <span class="text-xs font-bold text-orange-600 tracking-wider uppercase">Explora el Contenido del Ebook</span>
+                <h2 class="font-display text-3xl font-extrabold text-slate-900">
+                    28 Recetas Magistrales distribuidas en 7 Capítulos
+                </h2>
+                <p class="text-slate-600 text-sm max-w-2xl mx-auto">
+                    Haz clic en cada capítulo para descubrir ejemplos reales, técnicas de conservación y trucos de descongelación rápida:
+                </p>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8" id="recipe-tabs">
+                <button onclick="switchTab('cap1')" id="tab-cap1" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-orange-600 text-white shadow-sm transition-all">
+                    Cap. 1: Carnes y Pollo
+                </button>
+                <button onclick="switchTab('cap2')" id="tab-cap2" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all">
+                    Cap. 2: Pescados
+                </button>
+                <button onclick="switchTab('cap3')" id="tab-cap3" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all">
+                    Cap. 3: Acompañamientos
+                </button>
+                <button onclick="switchTab('cap4')" id="tab-cap4" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all">
+                    Cap. 4: Snacks & Meriendas
+                </button>
+                <button onclick="switchTab('cap5')" id="tab-cap5" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all">
+                    Cap. 5: Salsas & Aderezos
+                </button>
+                <button onclick="switchTab('cap6')" id="tab-cap6" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all">
+                    Cap. 6: Sopas & Crema
+                </button>
+                <button onclick="switchTab('cap7')" id="tab-cap7" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all">
+                    Cap. 7: Postres Saludables
+                </button>
+            </div>
+
+            <!-- Tab Content Cards -->
+            <div id="tab-content" class="bg-white rounded-2xl border border-slate-200 shadow-md p-6 sm:p-8">
+                <!-- Dynamic Content injected via JS -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3-STEP METHOD SECTION -->
+    <section class="py-16 bg-white border-b border-slate-200/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 mb-12">
+                <span class="text-xs font-bold text-orange-600 tracking-wider uppercase">El Método Científico del Congelado</span>
+                <h2 class="font-display text-3xl font-extrabold text-slate-900">
+                    Los 3 Pilares para Garantizar Sabor y Jugosidad Perfectos
+                </h2>
+                <p class="text-slate-600 max-w-xl mx-auto text-sm sm:text-base">
+                    La diferencia entre una comida gomosa e insípida y un banquete con sabor a recién hecho radica en esta metodología de 3 pasos:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Step 1 -->
+                <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200/80 relative hover:border-orange-300 transition-colors">
+                    <div class="w-12 h-12 bg-orange-100 text-orange-600 font-extrabold text-xl rounded-xl flex items-center justify-center mb-6">
+                        01
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-slate-900 mb-2">Blanqueado y Choque Térmico</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Inactiva las enzimas responsables del deterioro de color y nutrientes pasándolas brevemente por agua hirviendo e hirviendo en hielo. Las carnes se enfrían aceleradamente para prevenir microcristales destructivos.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200/80 relative hover:border-amber-300 transition-colors">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 font-extrabold text-xl rounded-xl flex items-center justify-center mb-6">
+                        02
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-slate-900 mb-2">Empaque Plano Anti-Hielo</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Aprende a congelar en bolsas herméticas de forma plana para maximizar espacio vertical y expulsar el aire. Evitas las quemaduras de frío y reduces el tiempo de descongelación a la mitad.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200/80 relative hover:border-emerald-300 transition-colors">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 font-extrabold text-xl rounded-xl flex items-center justify-center mb-6">
+                        03
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-slate-900 mb-2">Regeneración Térmica Inteligente</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Técnicas específicas para recalentar cada grupo de alimentos: calor seco para vegetales crujientes, vapor cerrado para guisos jugosos y métodos directos sin necesidad de descongelar previamente.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUE STACK / BUNDLE BREAKDOWN SECTION -->
+    <section class="py-16 bg-gradient-to-b from-orange-50 to-white border-b border-orange-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+
+            <div class="text-center space-y-3 mb-10">
+                <span class="text-xs font-bold text-orange-600 tracking-wider uppercase">Oferta por Tiempo Limitado</span>
+                <h2 class="font-display text-3xl font-extrabold text-slate-900">
+                    Todo lo que Recibirás Hoy al Ordenar tu Copia
+                </h2>
+                <p class="text-slate-600 text-sm">Asegura tu paquete completo en formato PDF descargable de inmediato:</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border-2 border-orange-200 shadow-xl overflow-hidden">
+
+                <!-- Header -->
+                <div class="bg-slate-900 text-white p-5 sm:p-6 text-center">
+                    <h3 class="font-display text-xl sm:text-2xl font-bold">Ebook + Sistema de Transformación de Cocina</h3>
+                    <p class="text-xs text-orange-200 mt-1">Acceso digital instantáneo a tu correo electrónico</p>
+                </div>
+
+                <!-- Stack Items -->
+                <div class="p-6 sm:p-8 space-y-4 divide-y divide-slate-100">
+
+                    <div class="flex items-start justify-between gap-4 pt-2">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-book"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm sm:text-base">Ebook Principal: El Arte de Congelar Fácil (28 Recetas)</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Guía completa con 7 capítulos detallados, tablas nutricionales, sustituciones directas y técnica anti-quemaduras por hielo.</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-semibold text-slate-400 line-through whitespace-nowrap">$29.00 USD</span>
+                    </div>
+
+                    <div class="flex items-start justify-between gap-4 pt-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm sm:text-base">BONO #1: Plan Maestro de Menús de 30 Días</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Calendario inteligente listo para imprimir. Organiza la rotación de carnes, garbanzos y ensaladas sin aburrirte jamás.</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full whitespace-nowrap">GRATIS HOY</span>
+                    </div>
+
+                    <div class="flex items-start justify-between gap-4 pt-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm sm:text-base">BONO #2: Menús Semanales Temáticos Express</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Configuraciones pre-armadas para semanas Mediterráneas, Vegetarianas y Altas en Proteína.</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full whitespace-nowrap">GRATIS HOY</span>
+                    </div>
+
+                    <div class="flex items-start justify-between gap-4 pt-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-boxes-packing"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm sm:text-base">BONO #3: Guía de Organización del Congelador por Zonas</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Optimiza congeladores pequeños. Método PEPS (Primero en entrar, primero en salir) e inventario visual.</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full whitespace-nowrap">GRATIS HOY</span>
+                    </div>
+
+                    <div class="flex items-start justify-between gap-4 pt-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-clock font-bold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm sm:text-base">BONO #4: Tabla Infográfica de Caducidades y Tiempos Máximos</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Infografía de referencia rápida para pegar en el refrigerador con duraciones exactas por tipo de alimento.</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full whitespace-nowrap">GRATIS HOY</span>
+                    </div>
+
+                </div>
+
+                <!-- Price Total Section -->
+                <div class="bg-orange-50/90 p-6 border-t border-orange-200 text-center space-y-4">
+                    <div>
+                        <span class="text-xs text-slate-500 uppercase font-bold tracking-wider">VALOR TOTAL REAL: <span class="line-through">$82.00 USD</span></span>
+                        <div class="flex items-center justify-center gap-2 mt-1">
+                            <span class="text-slate-700 text-sm font-semibold">Tuyo hoy por solo:</span>
+                            <span class="text-3xl sm:text-4xl font-extrabold text-orange-600">$9.97 USD</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Pago único sin suscripciones ni cobros ocultos · Acceso vitalicio</p>
+                    </div>
+
+                    <a href="https://pay.hotmart.com/S107085726W" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-lg rounded-xl shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition-all transform hover:-translate-y-0.5 gap-2">
+                        <span>¡SÍ, QUIERO OBTENER TODO POR $9.97!</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <!-- Payment methods -->
+                    <div class="pt-2 text-xs text-slate-500 space-y-2">
+                        <p class="font-medium">Pagos procesados con máxima seguridad por Hotmart en tu moneda local:</p>
+                        <div class="flex flex-wrap items-center justify-center gap-2 text-slate-600 text-[11px]">
+                            <span class="bg-white px-2.5 py-1 rounded border border-slate-200 font-medium"><i class="fa-solid fa-credit-card"></i> Tarjeta Débito / Crédito</span>
+                            <span class="bg-white px-2.5 py-1 rounded border border-slate-200 font-medium"><i class="fa-brands fa-paypal"></i> PayPal</span>
+                            <span class="bg-white px-2.5 py-1 rounded border border-slate-200 font-medium">Mercado Pago</span>
+                            <span class="bg-white px-2.5 py-1 rounded border border-slate-200 font-medium">Pagos en Efectivo Local</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF & TESTIMONIALS SECTION -->
+    <section class="py-16 bg-white border-b border-slate-200/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 mb-12">
+                <div class="inline-flex items-center gap-1 text-amber-500 text-sm font-bold">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <span class="text-slate-700 ml-1">4.9/5 estrellas de más de 1,200 familias hispanas</span>
+                </div>
+                <h2 class="font-display text-3xl font-extrabold text-slate-900">
+                    Historias de Éxito de Quienes Ya Transformaron su Ropa de Cocina
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base max-w-lg mx-auto">
+                    Esto es lo que dicen personas reales que lograron liberarse de la estufa diario:
+                </p>
+            </div>
+
+            <!-- Testimonial Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Review 1 -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-orange-200 text-orange-800 font-bold flex items-center justify-center text-sm">
+                                MP
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900">Mariana P.</h4>
+                                <p class="text-xs text-slate-500">México DF</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-700 text-xs sm:text-sm leading-relaxed italic">
+                            "Antes pensaba que congelar pollo o carne los dejaba secos como suela de zapato. Aplicando el marinado térmico del capítulo 1, la pechuga de pollo queda jugosísima. Los domingos cocino 2 horas y media y me olvido toda la semana."
+                        </p>
+                    </div>
+                    <div class="text-xs text-emerald-600 font-semibold flex items-center gap-1 pt-2 border-t border-slate-200/60">
+                        <i class="fa-solid fa-circle-check"></i> Comprador verificado en Hotmart
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-emerald-200 text-emerald-800 font-bold flex items-center justify-center text-sm">
+                                CR
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900">Carlos R.</h4>
+                                <p class="text-xs text-slate-500">Madrid, España</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-700 text-xs sm:text-sm leading-relaxed italic">
+                            "El capítulo de pescados es SENSACIONAL. Tenía miedo con la merluza y el salmón, pero siguiendo la regla del calor residual queda perfecto. He ahorrado fácil 150 euros este mes en pedidos a domicilio."
+                        </p>
+                    </div>
+                    <div class="text-xs text-emerald-600 font-semibold flex items-center gap-1 pt-2 border-t border-slate-200/60">
+                        <i class="fa-solid fa-circle-check"></i> Comprador verificado en Hotmart
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-amber-200 text-amber-800 font-bold flex items-center justify-center text-sm">
+                                SL
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900">Sofía L.</h4>
+                                <p class="text-xs text-slate-500">Bogotá, Colombia</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-700 text-xs sm:text-sm leading-relaxed italic">
+                            "Trabajo 10 horas al día y siempre terminaba comiendo cosas procesadas por cansancio. El plan de 30 días me dio una estructura que no sabía que necesitaba. ¡Vale 10 veces más de lo que cuesta!"
+                        </p>
+                    </div>
+                    <div class="text-xs text-emerald-600 font-semibold flex items-center gap-1 pt-2 border-t border-slate-200/60">
+                        <i class="fa-solid fa-circle-check"></i> Comprador verificado en Hotmart
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GUARANTEE SECTION -->
+    <section class="py-14 bg-slate-50 border-b border-slate-200/80">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+            <div class="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+                <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-2xl font-extrabold shadow-sm">
+                    <i class="fa-solid fa-shield-check"></i>
+                </div>
+                <h2 class="font-display text-2xl font-bold text-slate-900">Garantía Incondicional de Satisfacción Total (7 Días)</h2>
+                <p class="text-slate-600 text-sm leading-relaxed max-w-xl mx-auto">
+                    Queremos que sientas cero riesgo. Descarga la guía, prueba el método este fin de semana y prepara las primeras recetas. Si sientes que este libro no te ayuda a ahorrar tiempo, dinero o no cumple al 100% tus expectativas, simplemente solicita tu reembolso directo en Hotmart dentro de los primeros 7 días y <strong>te devolveremos cada centavo de tu dinero</strong>. Sin preguntas ni vueltas.
+                </p>
+                <span class="inline-block text-xs font-bold text-emerald-700 bg-emerald-100/80 px-3.5 py-1.5 rounded-full border border-emerald-200">
+                    <i class="fa-solid fa-lock text-emerald-600 mr-1"></i> Tu inversión está totalmente protegida
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ ACCORDION SECTION -->
+    <section class="py-16 bg-white border-b border-slate-200/80">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+
+            <div class="text-center space-y-2 mb-10">
+                <span class="text-xs font-bold text-orange-600 tracking-wider uppercase">Resolvemos tus Dudas</span>
+                <h2 class="font-display text-3xl font-extrabold text-slate-900">
+                    Preguntas Frecuentes
+                </h2>
+            </div>
+
+            <div class="space-y-3">
+
+                <details class="group bg-slate-50 rounded-xl border border-slate-200 p-4 sm:p-5 [&_summary::-webkit-details-marker]:none transition-colors hover:bg-slate-100/80">
+                    <summary class="flex items-center justify-between font-bold text-slate-900 text-sm sm:text-base cursor-pointer">
+                        <span>¿Cómo y cuándo recibiré el contenido?</span>
+                        <span class="transition group-open:rotate-180 text-orange-500"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Inmediatamente después de confirmar tu pago, recibirás un correo electrónico automático de Hotmart con tu enlace de descarga directa al libro y todos sus anexos en formato PDF digital. Podrás leerlo desde tu smartphone, tablet o computadora, e incluso imprimirlo si lo prefieres.
+                    </p>
+                </details>
+
+                <details class="group bg-slate-50 rounded-xl border border-slate-200 p-4 sm:p-5 [&_summary::-webkit-details-marker]:none transition-colors hover:bg-slate-100/80">
+                    <summary class="flex items-center justify-between font-bold text-slate-900 text-sm sm:text-base cursor-pointer">
+                        <span>Tengo un congelador muy pequeño, ¿me servirá?</span>
+                        <span class="transition group-open:rotate-180 text-orange-500"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        ¡Absolutamente! De hecho, la técnica de empaque plano en bolsas especiales para congelar está diseñada para aprovechar la altura y profundidad de congeladores estándar o compactos de apartamentos pequeños.
+                    </p>
+                </details>
+
+                <details class="group bg-slate-50 rounded-xl border border-slate-200 p-4 sm:p-5 [&_summary::-webkit-details-marker]:none transition-colors hover:bg-slate-100/80">
+                    <summary class="flex items-center justify-between font-bold text-slate-900 text-sm sm:text-base cursor-pointer">
+                        <span>¿La comida no pierde sus nutrientes ni sabor?</span>
+                        <span class="transition group-open:rotate-180 text-orange-500"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        No cuando utilizas el choque térmico (blanqueado) y el sello sin aire que explicamos en el libro. Al congelar a la velocidad adecuada, las paredes celulares de las verduras y la fibra muscular de las carnes no sufren rupturas, conservando hasta el 95% de sus vitaminas y su sabor original.
+                    </p>
+                </details>
+
+                <details class="group bg-slate-50 rounded-xl border border-slate-200 p-4 sm:p-5 [&_summary::-webkit-details-marker]:none transition-colors hover:bg-slate-100/80">
+                    <summary class="flex items-center justify-between font-bold text-slate-900 text-sm sm:text-base cursor-pointer">
+                        <span>¿Puedo pagar en la moneda de mi país?</span>
+                        <span class="transition group-open:rotate-180 text-orange-500"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Sí, la pasarela de pagos inteligente de Hotmart detecta tu ubicación y convierte automáticamente los $9.97 USD a tu moneda local (Pesos Mexicanos, Pesos Colombianos, Euros, Soles, Pesos Chilenos, etc.) ofreciéndote las opciones de pago bancario o efectivo más comunes en tu país.
+                    </p>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="py-16 bg-slate-950 text-white relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6 relative z-10">
+
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">
+                Transforma tu relación con la cocina a partir de este fin de semana.
+            </h2>
+
+            <p class="text-slate-300 text-base max-w-xl mx-auto">
+                No pospongas más tu bienestar ni tu libertad de tiempo. Asegura el Ebook con las 28 recetas + los 4 Bonos por solo <strong class="text-amber-400">$9.97 USD</strong> antes de que expire la oferta de lanzamiento.
+            </p>
+
+            <div class="pt-4 space-y-3">
+                <a href="https://pay.hotmart.com/S107085726W" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center px-10 py-4 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-lg rounded-xl shadow-xl shadow-orange-500/20 hover:shadow-orange-500/40 transition-all transform hover:-translate-y-0.5 gap-3">
+                    <span>¡OBTENER MI ACCESO INMEDIATO!</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <p class="text-xs text-slate-400">Descarga inmediata en PDF · Garantía total de reembolso por 7 días</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-500 text-xs py-8 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 text-center space-y-3">
+            <p>© <span id="current-year">2026</span> El Arte de Congelar Fácil · Todos los derechos reservados.</p>
+            <p class="max-w-2xl mx-auto text-[11px] text-slate-500 leading-relaxed">
+                Este sitio web no es parte del sitio web de Meta Inc. ni de Facebook Inc. Además, este sitio NO está respaldado por Meta Inc. de ninguna manera. Hotmart es el distribuidor oficial y procesador de pagos seguro de esta publicación digital.
+            </p>
+        </div>
+    </footer>
+
+    <!-- STICKY MOBILE BOTTOM BAR -->
+    <div class="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 p-3 md:hidden z-40 flex items-center justify-between shadow-2xl">
+        <div>
+            <span class="text-[10px] text-slate-400 line-through block leading-none">$29.00 USD</span>
+            <span class="text-lg font-extrabold text-white leading-none">$9.97 <span class="text-[10px] text-orange-400 font-normal">USD</span></span>
+        </div>
+        <a href="https://pay.hotmart.com/S107085726W" target="_blank" rel="noopener noreferrer"
+           class="px-5 py-2.5 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold text-sm rounded-lg shadow-md flex items-center gap-1.5">
+            <span>Comprar Ahora</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+    </div>
+
+    <!-- FLOATING LIVE SOCIAL PROOF TOAST -->
+    <div id="toast-notification" class="fixed bottom-16 md:bottom-6 left-4 z-50 hidden max-w-xs bg-slate-900 text-white p-3.5 rounded-xl border border-slate-700 shadow-2xl animate-slide-up">
+        <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs flex-shrink-0">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+            <div class="text-xs">
+                <p class="font-bold text-white" id="toast-title">Lucía M. de Bogotá</p>
+                <p class="text-slate-400 text-[11px]" id="toast-desc">Acaba de adquirir el Ebook hace 4 min</p>
+            </div>
+            <button onclick="dismissToast()" class="text-slate-500 hover:text-white ml-auto text-xs p-1">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR INTERACTIVE LOGIC -->
+    <script>
+        // Dynamic year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Countdown Timer simulation
+        let totalSeconds = 14 * 60 + 52;
+        const timerElement = document.getElementById('countdown-timer');
+
+        if (timerElement) {
+            setInterval(() => {
+                if (totalSeconds > 0) {
+                    totalSeconds--;
+                    const minutes = Math.floor(totalSeconds / 60);
+                    const seconds = totalSeconds % 60;
+                    timerElement.textContent = `${minutes}m ${seconds < 10 ? '0' : ''}${seconds}s`;
+                }
+            }, 1000);
+        }
+
+        // Calculator Logic
+        function updateCalculator() {
+            const days = parseInt(document.getElementById('delivery-days').value);
+            const cost = parseInt(document.getElementById('cost-per-meal').value);
+
+            document.getElementById('delivery-days-val').textContent = `${days} días/semana`;
+            document.getElementById('cost-val').textContent = `$${cost} USD`;
+
+            // Calculations
+            const monthlySpendDelivery = days * 4 * cost;
+            const batchCookingCost = days * 4 * (cost * 0.35); // 65% cheaper cooking at home
+            const monthlySavings = Math.round(monthlySpendDelivery - batchCookingCost);
+            const hoursSaved = days * 4; // Approx 1 hr saved per day
+            const roi = Math.round((monthlySavings / 9.97) * 100);
+
+            document.getElementById('monthly-savings').textContent = `$${monthlySavings} USD`;
+            document.getElementById('hours-saved').textContent = `${hoursSaved} hrs/mes`;
+            document.getElementById('roi-val').textContent = `${roi.toLocaleString()}%`;
+        }
+
+        // Recipe Explorer Data
+        const recipesData = {
+            cap1: {
+                title: "Capítulo 1: Carnes y Pollo (Máxima Proteína y Jugosidad)",
+                time: "Duración en Congelador: 3 Meses",
+                items: [
+                    "Pollo a la plancha con marinado de limón y hierbas (280 kcal · 35g P)",
+                    "Muslos de pollo glaseados al horno (320 kcal · 28g P)",
+                    "Carne molida sazonada base boloñesa (290 kcal · 26g P)",
+                    "Albóndigas de ternera en salsa de tomate casera (340 kcal · 28g P)"
+                ],
+                secret: "Secreto técnico: Congelar la proteína con su propio marinado o cobertura líquida crea un escudo térmico que preserva la jugosidad original.",
+                reheat: "Descongelado seguro: Pasa la porción al refrigerador la noche anterior y recalienta en sartén tapada a fuego medio-bajo."
+            },
+            cap2: {
+                title: "Capítulo 2: Pescados y Mariscos (Punto de Cocción Perfecto)",
+                time: "Duración en Congelador: 2-3 Meses",
+                items: [
+                    "Salmón al horno con eneldo y cítricos (340 kcal · 35g P)",
+                    "Merluza en salsa verde reconfortante (280 kcal · 30g P)",
+                    "Bacalao confitado al pilpil (380 kcal · 32g P)",
+                    "Gambas y camarones al ajillo express (260 kcal · 26g P)"
+                ],
+                secret: "Secreto técnico: Retira el pescado del fuego justo antes de su punto térmico final, ya que el calor residual del recalentado terminará de cocinarlo suavemente.",
+                reheat: "Descongelado seguro: Descongelación lenta en refrigerador. Si la salsa emulsionada se separa, recupérala agitando suavemente a fuego muy bajo."
+            },
+            cap3: {
+                title: "Capítulo 3: Acompañamientos y Almidones Crujientes",
+                time: "Duración en Congelador: 2-3 Meses",
+                items: [
+                    "Verduras asadas rústicas al horno (220 kcal · 100% Vegano)",
+                    "Arroz integral en porciones planas de enfriamiento rápido (120 kcal)",
+                    "Puré de patata sedoso enriquecido (260 kcal)",
+                    "Garbanzos guisados con espinacas y pimentón (290 kcal)"
+                ],
+                secret: "Secreto técnico: El arroz requiere choque térmico y empaque en bolsa plana en menos de 60 minutos tras su cocción.",
+                reheat: "Descongelado seguro: Recalentar con calor seco (freidora de aire u horno) para recuperar la textura de las verduras."
+            },
+            cap4: {
+                title: "Capítulo 4: Snacks y Meriendas Nutritivas",
+                time: "Duración en Congelador: 2-3 Meses",
+                items: [
+                    "Barritas energéticas de avena y frutos secos (280 kcal)",
+                    "Muffins esponjosos de plátano sin azúcar",
+                    "Bolas proteicas de dátil, avellana y cacao",
+                    "Mini tortitas de avena con arándanos"
+                ],
+                secret: "Secreto técnico: Congela primero individualmente en bandeja antes de pasarlas a un recipiente hermético para que no se peguen.",
+                reheat: "Consumo directo: Listas tras 15 minutos a temperatura ambiente o 20 segundos en microondas."
+            },
+            cap5: {
+                title: "Capítulo 5: Salsas y Aderezos Concentrados",
+                time: "Duración en Congelador: 3-4 Meses",
+                items: [
+                    "Salsa de tomate casera concentrada",
+                    "Pesto de albahaca fresca en cubos congelados",
+                    "Boloñesa vegetal de lentejas",
+                    "Marinada de miso, jengibre y sésamo"
+                ],
+                secret: "Secreto técnico: Congelar las salsas en cubiteras de silicona te permite dosificar la cantidad exacta por plato.",
+                reheat: "Uso directo: Agrega el cubo helado directamente a la sartén o pasta caliente."
+            },
+            cap6: {
+                title: "Capítulo 6: Sopas, Caldos y Cremas Reconfortantes",
+                time: "Duración en Congelador: 2-3 Meses",
+                items: [
+                    "Caldo de hueso y pollo curativo",
+                    "Crema aterciopelada de calabaza y jengibre",
+                    "Sopa minestrone tradicional de vegetales",
+                    "Sopa de lentejas rojas con cúrcuma"
+                ],
+                secret: "Secreto técnico: Deja un 10% de espacio libre en recipientes rígidos para absorber la expansión física del líquido helado.",
+                reheat: "Descongelado directo: Calienta el bloque helado directamente en la olla a fuego lento con 2 cucharadas de agua."
+            },
+            cap7: {
+                title: "Capítulo 7: Postres Saludables (Sin Azúcar Añadido)",
+                time: "Duración en Congelador: 2 Meses",
+                items: [
+                    "Bizcocho integral de zanahoria en rebanadas individuales",
+                    "Helado cremoso de plátano y cacao puro",
+                    "Galletas crujientes de avena y pasas",
+                    "Mousse de chocolate y aguacate"
+                ],
+                secret: "Secreto técnico: Enuelve bizcochos porción por porción con film transparente para retirar solo la rebanada a consumir.",
+                reheat: "Consumo: Descongela a temperatura ambiente durante 20 minutos o disfruta el helado con consistencia soft directamente."
+            }
+        };
+
+        function switchTab(key) {
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.className = 'tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all';
+            });
+
+            const activeBtn = document.getElementById(`tab-${key}`);
+            if (activeBtn) {
+                activeBtn.className = 'tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-orange-600 text-white shadow-sm transition-all';
+            }
+
+            const item = recipesData[key];
+            const container = document.getElementById('tab-content');
+
+            let listHtml = item.items.map(rec => `<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-500 text-xs"></i> <span>${rec}</span></li>`).join('');
+
+            container.innerHTML = `
+                <div class="space-y-4 animate-fade-in">
+                    <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
+                        <h3 class="font-display text-lg sm:text-xl font-bold text-slate-900">${item.title}</h3>
+                        <span class="text-xs font-bold text-orange-700 bg-orange-100 px-3 py-1 rounded-full"><i class="fa-regular fa-clock mr-1"></i>${item.time}</span>
+                    </div>
+
+                    <div>
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Recetas destacadas en este capítulo:</p>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-slate-700 font-medium">
+                            ${listHtml}
+                        </ul>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs">
+                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                            <span class="font-bold text-slate-900 block mb-1"><i class="fa-solid fa-lightbulb text-amber-500 mr-1"></i> Secreto Técnico del Capítulo</span>
+                            <span class="text-slate-600">${item.secret}</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                            <span class="font-bold text-slate-900 block mb-1"><i class="fa-solid fa-fire-burner text-orange-600 mr-1"></i> Método de Descongelación</span>
+                            <span class="text-slate-600">${item.reheat}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Initialize default tab & calculator on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            updateCalculator();
+            switchTab('cap1');
+            startToastCycle();
+        });
+
+        // Toast Social Proof Logic
+        const toastSales = [
+            { name: "Lucía M. de Bogotá", time: "hace 3 minutos" },
+            { name: "Andrés G. de Ciudad de México", time: "hace 6 minutos" },
+            { name: "Valeria P. de Madrid", time: "hace 11 minutos" },
+            { name: "Camila R. de Santiago de Chile", time: "hace 2 minutos" }
+        ];
+
+        let toastIndex = 0;
+
+        function startToastCycle() {
+            setTimeout(() => {
+                showToast();
+                setInterval(() => {
+                    showToast();
+                }, 14000);
+            }, 4000);
+        }
+
+        function showToast() {
+            const toastEl = document.getElementById('toast-notification');
+            const titleEl = document.getElementById('toast-title');
+            const descEl = document.getElementById('toast-desc');
+
+            const current = toastSales[toastIndex % toastSales.length];
+            titleEl.textContent = current.name;
+            descEl.textContent = `Acaba de adquirir el Ebook ${current.time}`;
+
+            toastEl.classList.remove('hidden');
+
+            setTimeout(() => {
+                dismissToast();
+            }, 5000);
+
+            toastIndex++;
+        }
+
+        function dismissToast() {
+            const toastEl = document.getElementById('toast-notification');
+            toastEl.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
